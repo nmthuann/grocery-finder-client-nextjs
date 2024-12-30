@@ -17,7 +17,7 @@ const insights: string[] = [
 ];
 
 interface HeaderProps {
-    location: ILocation[];
+    location: Location[];
     categories: Category[];
 }
 

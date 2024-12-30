@@ -10,7 +10,7 @@ interface RegisterAccountProps {
     onPress: () => void;
     setSelected: (option: string) => void;
     isLoading: boolean;
-    location: ILocation[];
+    location: Location[];
 }
 
 export const RegisterAccount: React.FC<RegisterAccountProps> = ({
@@ -28,8 +28,6 @@ export const RegisterAccount: React.FC<RegisterAccountProps> = ({
     };
     const handleSendOtpSucceeded = () => {
         setOtpSucceeded(true);
-        // router.push("/auth/create-user");
-        // onPress();
     };
 
     return (
@@ -46,7 +44,6 @@ export const RegisterAccount: React.FC<RegisterAccountProps> = ({
                     ) : (
                         <InputOtpForm
                             onSendOtpSucceed={handleSendOtpSucceeded}
-                            //onPress={onPress}
                             isLoading={false}
                             emailValid={emailValid}
                         />

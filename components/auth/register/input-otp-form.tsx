@@ -30,8 +30,6 @@ export const InputOtpForm: React.FC<InputOtpFormProps> = ({
 }) => {
     const [value, setValue] = useState("");
     const [onBtnLoad, setOnBtnLoad] = useState(isLoading);
-    // const [loading, setLoading] = useState(isLoading);
-
     const isValueComplete = value.length === 6;
     const handleSendOTP = async () => {
         if (onBtnLoad) return;
@@ -111,7 +109,7 @@ export const InputOtpForm: React.FC<InputOtpFormProps> = ({
                         <BtnNextUI
                             disabled={onBtnLoad}
                             className="w-full bg-gradient-to-r from-lime-400 to-green-600 text-white font-medium"
-                            onClick={handleSendOTP}
+                            onPress={handleSendOTP}
                             variant="shadow"
                         >
                             Xác thực

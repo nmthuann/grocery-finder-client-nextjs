@@ -11,7 +11,6 @@ import {
 } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 import AuthenticationModal from "../auth/authentication-modal";
-import UserAction from "./user-action";
 import { useAuthContext } from "@/providers/auth-provider";
 import { ShoppingCart, User2Icon } from "lucide-react";
 import { ThemeToggle } from "./theme-toggle";
@@ -20,6 +19,7 @@ import { SidebarSheet } from "@/app/components/sidebar-sheet";
 import { Category } from "@/types/products.type";
 import { useRouter } from "next/navigation";
 import useCart from "@/hooks/use-cart";
+import { UserAction } from "./user-action";
 
 interface NavbarMobileComponentProps {
     location: Location[];

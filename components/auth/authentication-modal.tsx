@@ -12,7 +12,7 @@ import { AuthenticationTab } from "./authentication-tab";
 interface AuthenticationModalProps {
     isOpen: boolean;
     onOpenChange(): void;
-    location: ILocation[];
+    location: Location[];
     size: string;
 }
 

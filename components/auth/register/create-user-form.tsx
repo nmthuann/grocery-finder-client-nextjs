@@ -46,7 +46,7 @@ interface CreateUserFormProps {
     onPress: () => void;
     setSelected: (option: string) => void;
     isLoading: boolean;
-    location: ILocation[];
+    location: Location[];
     emailValid: string;
 }
 
@@ -58,11 +58,7 @@ export const CreateUserForm: React.FC<CreateUserFormProps> = ({
     emailValid,
 }) => {
     const router = useRouter();
-    // const [loading, setLoading] = useState(isLoading);
     const [onBtnLoad, setOnBtnLoad] = useState(isLoading);
-
-    // const [password, setPassword] = useState("");
-    // const [confirmPassword, setConfirmPassword] = useState("");
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
         useState(false);
@@ -73,26 +69,16 @@ export const CreateUserForm: React.FC<CreateUserFormProps> = ({
         setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
 
     const [city, setCity] = useState<string>("");
-    const [districtList, setDistrictList] = useState<IDistricts[]>([]);
+    const [districtList, setDistrictList] = useState<Districts[]>([]);
     const [district, setDistrict] = useState<string>("");
-    const [wardList, setWardList] = useState<IWards[]>([]);
+    const [wardList, setWardList] = useState<Wards[]>([]);
     const { setUserCallback } = useAuthContext();
-
-    // const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     setPassword(e.target.value);
-    // };
-
-    // const handleConfirmPasswordChange = (
-    //     e: React.ChangeEvent<HTMLInputElement>
-    // ) => {
-    //     setConfirmPassword(e.target.value);
-    // };
 
     const handleCityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedCityId: string = event.target.value;
         setCity(selectedCityId);
         const selectedDistricts = location.find(
-            (city: ILocation) => city.Id === selectedCityId
+            (city: Location) => city.Id === selectedCityId
         );
         if (selectedDistricts) {
             setDistrictList(selectedDistricts.Districts || []);
@@ -106,8 +92,8 @@ export const CreateUserForm: React.FC<CreateUserFormProps> = ({
     ) => {
         const selectedDistrictId: string = event.target.value;
         setDistrict(selectedDistrictId);
-        const selectedWards: IDistricts | undefined = districtList.find(
-            (district: IDistricts) => district.Id === selectedDistrictId
+        const selectedWards: Districts | undefined = districtList.find(
+            (district: Districts) => district.Id === selectedDistrictId
         );
 
         if (selectedWards) {
@@ -155,7 +141,6 @@ export const CreateUserForm: React.FC<CreateUserFormProps> = ({
             toast.error(`${SystemError.INTERNAL_SERVER_ERROR}`);
         } finally {
             setOnBtnLoad(false);
-            //setLoading(false);
         }
     }
 
@@ -374,10 +359,10 @@ export const CreateUserForm: React.FC<CreateUserFormProps> = ({
                                         field.onChange(event); // Gọi sự kiện onChange từ field
                                     }}
                                 >
-                                    {location.map((city: ILocation) => (
+                                    {location.map((city: Location) => (
                                         <SelectItem
                                             key={city.Id}
-                                            onClick={() => {
+                                            onPress={() => {
                                                 form.setValue(
                                                     "city",
                                                     city.Name
@@ -416,7 +401,7 @@ export const CreateUserForm: React.FC<CreateUserFormProps> = ({
                                     {districtList.map((district) => (
                                         <SelectItem
                                             key={district.Id}
-                                            onClick={() => {
+                                            onPress={() => {
                                                 form.setValue(
                                                     "district",
                                                     district.Name
@@ -451,7 +436,7 @@ export const CreateUserForm: React.FC<CreateUserFormProps> = ({
                                     {(ward) => (
                                         <SelectItem
                                             key={ward.Id}
-                                            onClick={() => {
+                                            onPress={() => {
                                                 form.setValue(
                                                     "ward",
                                                     ward.Name

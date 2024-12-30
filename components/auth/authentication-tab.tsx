@@ -8,7 +8,7 @@ import { LoginAccount } from "./login/login-account";
 interface AuthenticationTabProps {
     onPress(): void;
     isLoading: boolean;
-    location: ILocation[];
+    location: Location[];
 }
 export const AuthenticationTab: React.FC<AuthenticationTabProps> = ({
     onPress,
