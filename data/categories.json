@@ -1,0 +1,263 @@
+[
+    {
+        "id": 3,
+        "categoryName": "DẦU ĂN, NƯỚC CHẤM, GIA VỊ",
+        "description": "DẦU ĂN, NƯỚC CHẤM, GIA VỊ",
+        "categoryUrl": "/dau-an-nuoc-cham-gia-vi",
+        "leftValue": 3,
+        "rightValue": 8,
+        "parentId": "2"
+    },
+    {
+        "id": 4,
+        "categoryName": "Dầu ăn",
+        "description": "Dầu ăn",
+        "categoryUrl": "/dau-an",
+        "leftValue": 4,
+        "rightValue": 5,
+        "parentId": "3"
+    },
+    {
+        "id": 5,
+        "categoryName": "Nước Mắm",
+        "description": "Các sản phẩm Nước Mắm",
+        "categoryUrl": "/nuoc-mam",
+        "leftValue": 6,
+        "rightValue": 7,
+        "parentId": "3"
+    },
+    {
+        "id": 7,
+        "categoryName": "BÁNH KẸO CÁC LOẠI",
+        "description": "BÁNH KẸO CÁC LOẠI",
+        "categoryUrl": "/banh-keo-cac-loai",
+        "leftValue": 9,
+        "rightValue": 14,
+        "parentId": "2"
+    },
+    {
+        "id": 8,
+        "categoryName": "Snack",
+        "description": "Snack",
+        "categoryUrl": "/snack",
+        "leftValue": 10,
+        "rightValue": 11,
+        "parentId": "7"
+    },
+    {
+        "id": 9,
+        "categoryName": "Kẹo Dẻo",
+        "description": "Kẹo Dẻo",
+        "categoryUrl": "/keo-deo",
+        "leftValue": 12,
+        "rightValue": 13,
+        "parentId": "7"
+    },
+    {
+        "id": 12,
+        "categoryName": "BIA, ĐỒ UỐNG NƯỚC GIẢI KHÁT",
+        "description": "Cửa hàng tạp hóa hàng đầu Tân Hiệp.",
+        "categoryUrl": "/bia-do-uong-nuoc-gia-khat",
+        "leftValue": 15,
+        "rightValue": 22,
+        "parentId": "2"
+    },
+    {
+        "id": 13,
+        "categoryName": "Bia, đồ uống có cồn",
+        "description": "Uống rượu bia không được phép lái xe.",
+        "categoryUrl": "/bia",
+        "leftValue": 16,
+        "rightValue": 17,
+        "parentId": "12"
+    },
+    {
+        "id": 14,
+        "categoryName": "Nước ngọt có gas",
+        "description": "Nước ngọt có gas.",
+        "categoryUrl": "/nuoc-ngot",
+        "leftValue": 18,
+        "rightValue": 19,
+        "parentId": "12"
+    },
+    {
+        "id": 15,
+        "categoryName": "Nước Trà",
+        "description": "Cửa hàng tạp hóa hàng đầu Tân Hiệp.",
+        "categoryUrl": "/nuoc-tra",
+        "leftValue": 20,
+        "rightValue": 21,
+        "parentId": "12"
+    },
+    {
+        "id": 16,
+        "categoryName": "SỮA CÁC LOẠI",
+        "description": "Các Loại Sữa.",
+        "categoryUrl": "/sua-cac-loai",
+        "leftValue": 23,
+        "rightValue": 30,
+        "parentId": "2"
+    },
+    {
+        "id": 17,
+        "categoryName": "Sữa tươi",
+        "description": "Các Loại Sữa Tươi.",
+        "categoryUrl": "/sua-tuoi",
+        "leftValue": 24,
+        "rightValue": 25,
+        "parentId": "16"
+    },
+    {
+        "id": 18,
+        "categoryName": "Sữa chua",
+        "description": "Các Loại Sữa Chua.",
+        "categoryUrl": "/sua-chua",
+        "leftValue": 26,
+        "rightValue": 27,
+        "parentId": "16"
+    },
+    {
+        "id": 19,
+        "categoryName": "Sữa ca cao, lúa mạch",
+        "description": "Các Loại Sữa Ca Cao, Lúa Mạch.",
+        "categoryUrl": "/sua-ca-cao-lua-mach",
+        "leftValue": 28,
+        "rightValue": 29,
+        "parentId": "16"
+    },
+    {
+        "id": 20,
+        "categoryName": "MÌ, MIẾN, CHÁO, PHỞ",
+        "description": "Các Loại Mì Miến Cháo Phở.",
+        "categoryUrl": "/mi-mien-chao-pho",
+        "leftValue": 31,
+        "rightValue": 40,
+        "parentId": "2"
+    },
+    {
+        "id": 22,
+        "categoryName": "Mì ăn liền",
+        "description": "Các Loại Mì Ăn Liền.",
+        "categoryUrl": "/mi-an-lien",
+        "leftValue": 32,
+        "rightValue": 33,
+        "parentId": "20"
+    },
+    {
+        "id": 23,
+        "categoryName": "Hủ Tiếu, Miến",
+        "description": "Các Loại Hủ Tiếu, Miến.",
+        "categoryUrl": "/hu-tieu-mien",
+        "leftValue": 34,
+        "rightValue": 35,
+        "parentId": "20"
+    },
+    {
+        "id": 24,
+        "categoryName": "Phở, Bún ăn liền",
+        "description": "Các Loại Phở, Bún ăn liền.",
+        "categoryUrl": "/pho-bun-an-lien",
+        "leftValue": 36,
+        "rightValue": 37,
+        "parentId": "20"
+    },
+    {
+        "id": 25,
+        "categoryName": "Cháo gói",
+        "description": "Các Loại Cháo Gói.",
+        "categoryUrl": "/chao-goi",
+        "leftValue": 38,
+        "rightValue": 39,
+        "parentId": "20"
+    },
+    {
+        "id": 21,
+        "categoryName": "CHĂM SÓC CÁ NHÂN",
+        "description": "Các Loại Sản phẩm chăm sóc cá nhân.",
+        "categoryUrl": "/cham-soc-ca-nhan",
+        "leftValue": 41,
+        "rightValue": 50,
+        "parentId": "2"
+    },
+    {
+        "id": 26,
+        "categoryName": "Dầu Gội",
+        "description": "Các Loại sản phẩm dầu gội.",
+        "categoryUrl": "/dau-goi",
+        "leftValue": 42,
+        "rightValue": 43,
+        "parentId": "21"
+    },
+    {
+        "id": 27,
+        "categoryName": "Dầu Xả, Kem ủ",
+        "description": "Các Loại sản phẩm Dầu xả kem ủ.",
+        "categoryUrl": "/dau-xa-kem-u",
+        "leftValue": 44,
+        "rightValue": 45,
+        "parentId": "21"
+    },
+    {
+        "id": 28,
+        "categoryName": "Sữa Tắm",
+        "description": "Các Loại sản phẩm Sữa tắm.",
+        "categoryUrl": "/sua-tam",
+        "leftValue": 46,
+        "rightValue": 47,
+        "parentId": "21"
+    },
+    {
+        "id": 29,
+        "categoryName": "Kem đánh răng",
+        "description": "Các Loại sản phẩm Kem đánh răng.",
+        "categoryUrl": "/kem-danh-rang",
+        "leftValue": 48,
+        "rightValue": 49,
+        "parentId": "21"
+    },
+    {
+        "id": 30,
+        "categoryName": "VỆ SINH NHÀ CỬA",
+        "description": "Các Loại sản phẩm vệ sinh nhà cửa.",
+        "categoryUrl": "/ve-sinh-nha-cua",
+        "leftValue": 51,
+        "rightValue": 60,
+        "parentId": "2"
+    },
+    {
+        "id": 31,
+        "categoryName": "Nước Giặt",
+        "description": "Các Loại sản phẩm nước giặt.",
+        "categoryUrl": "/nuoc-giat",
+        "leftValue": 52,
+        "rightValue": 53,
+        "parentId": "30"
+    },
+    {
+        "id": 32,
+        "categoryName": "Nước Rửa Chén",
+        "description": "Các Loại sản phẩm Nước Rửa Chén.",
+        "categoryUrl": "/nuoc-rua-chen",
+        "leftValue": 54,
+        "rightValue": 55,
+        "parentId": "30"
+    },
+    {
+        "id": 33,
+        "categoryName": "Nước Lau Nhà",
+        "description": "Các Loại sản phẩm Nước Lau Nhà.",
+        "categoryUrl": "/nuoc-lau-nha",
+        "leftValue": 56,
+        "rightValue": 57,
+        "parentId": "30"
+    },
+    {
+        "id": 34,
+        "categoryName": "Nước Xả",
+        "description": "Các Loại sản phẩm Nước Xả.",
+        "categoryUrl": "/nuoc-xa",
+        "leftValue": 58,
+        "rightValue": 59,
+        "parentId": "30"
+    }
+]
