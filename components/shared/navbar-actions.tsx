@@ -39,15 +39,25 @@ export const NavbarActions: React.FC<NavbarActionsProps> = ({ location }) => {
         >
             <SearchComponent />
 
-            <Badge content={cart.items.length} shape="circle" color="danger">
+            <Badge
+                content={cart.items.length}
+                shape="circle"
+                color="danger"
+                className="dark:border-white border-slate-900"
+            >
                 <Button
                     radius="full"
                     isIconOnly
                     aria-label="more than 99 notifications"
                     variant="light"
-                    onClick={() => router.push("/cart")}
+                    className="font-bold rounded-full dark:text-white text-slate-800 border-3 
+                    dark:bg-slate-900 bg-white  dark:border-slate-400"
+                    onPress={() => router.push("/cart")}
                 >
-                    <ShoppingCart size={24} />
+                    <ShoppingCart
+                        size={24}
+                        className="text-slate-800 dark:text-slate-400"
+                    />
                 </Button>
             </Badge>
 
@@ -58,13 +68,13 @@ export const NavbarActions: React.FC<NavbarActionsProps> = ({ location }) => {
                     <Tooltip content="Đăng nhập/ Đăng ký" placement="bottom">
                         <Button
                             onPress={onOpen}
-                            color="secondary"
-                            className="font-bold rounded-full dark:text-white "
-                            variant="shadow"
+                            className="font-bold rounded-full dark:text-white text-slate-800 border-3 
+                    dark:bg-slate-900 bg-white  dark:border-slate-400"
+                            variant="light"
                             isIconOnly
                             aria-label="Login"
                         >
-                            <User2Icon />
+                            <User2Icon className="text-slate-800 dark:text-slate-400" />
                         </Button>
                     </Tooltip>
 

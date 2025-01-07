@@ -11,7 +11,7 @@ import {
     useDisclosure,
 } from "@nextui-org/react";
 import { ChevronRight, SearchIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 import { ListboxWrapper } from "./listbox-wrapper";
 import { searchSkusByName } from "@/actions/search-skus-by-name";
 import { SearchProductResponse } from "@/types/products.type";

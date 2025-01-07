@@ -40,7 +40,8 @@ export const UserAction: React.FC<UserActionProps> = ({ user }) => {
             toast.success(res.data.message);
             handleLogout();
             router.push("/");
-        } catch (error) {
+        } catch (error: unknown) {
+            console.log(error);
             toast.error("Đăng xuất thất bại.");
         }
     }

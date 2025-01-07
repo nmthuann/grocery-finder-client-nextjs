@@ -72,7 +72,7 @@ export const NavbarMobileComponent: React.FC<NavbarMobileComponentProps> = ({
                         aria-label="more than 99 notifications"
                         variant="light"
                         size="sm"
-                        onClick={() => router.push("/cart")}
+                        onPress={() => router.push("/cart")}
                     >
                         <ShoppingCart size={20} />
                     </Button>

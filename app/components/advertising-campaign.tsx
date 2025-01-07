@@ -15,7 +15,7 @@ const AdvertisingCampaign = () => {
                     src={banner.src}
                     width={800}
                     height={400}
-                    alt=""
+                    alt="Advertising Campaign"
                     className=" md:w-[90%] md:ml-[-50px] 2xl:ml-[-90px]"
                 />
             </div>

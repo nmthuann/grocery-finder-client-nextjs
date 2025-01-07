@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ location, categories }) => {
             <div className="hidden md:block xl:py-0">
                 <NavbarMain location={location} />
             </div>
-            <div className="sm:hidden ">
+            <div className="sm:hidden">
                 <NavbarMobileComponent
                     location={location}
                     categories={categories}
