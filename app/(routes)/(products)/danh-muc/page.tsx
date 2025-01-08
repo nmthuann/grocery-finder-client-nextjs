@@ -1,13 +1,17 @@
+import { getProductResponse } from "@/actions/get-product";
 import Billboard from "./components/billboard";
 import CategoryList from "./components/category-list";
+import ProductSpecial from "./components/product-special";
+import Partners from "@/app/components/partners";
 
-const CategoryMainPage = () => {
+const CategoryMainPage = async () => {
+    const productResponses = await getProductResponse();
     return (
         <div>
             <Billboard />
             <CategoryList />
-            <div>Sản phẩm nổi bật</div>
-            <div>...</div>
+            <ProductSpecial productResponses={productResponses} />
+            <Partners />
         </div>
     );
 };

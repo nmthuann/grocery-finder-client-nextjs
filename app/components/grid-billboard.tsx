@@ -48,13 +48,13 @@ const GridBillboard: React.FC = () => {
                     const Icon = section.icon;
                     return (
                         <div key={section.title}>
-                            <Card className="h-32 w-full shadow-xl mt-5">
+                            <Card className="h-32 w-full shadow-xl mt-5 border-2">
                                 <CardBody className="flex flex-col justify-center items-center">
                                     <Icon
                                         className="text-primary mb-2 "
                                         size={45}
                                     />
-                                    <div className="text-center">
+                                    <div className="text-center ">
                                         <h3 className="text-base font-bold">
                                             {section.title}
                                         </h3>

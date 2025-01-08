@@ -9,10 +9,10 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import { Input, Listbox, ListboxItem } from "@nextui-org/react";
+import { Button, Input, Listbox, ListboxItem } from "@nextui-org/react";
 import { ChevronRight, SearchIcon } from "lucide-react";
-import { Button } from "../../ui/button";
-import { useEffect, useState } from "react";
+
+import { JSX, useEffect, useState } from "react";
 import { searchSkusByName } from "@/actions/search-skus-by-name";
 import { ListboxWrapper } from "./listbox-wrapper";
 import { SearchProductResponse } from "@/types/products.type";
@@ -75,8 +75,18 @@ export function SearchDialog() {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button variant="ghost" className="rounded-full" size={"sm"}>
-                    <SearchIcon className="h-4 w-4" />
+                <Button
+                    radius="full"
+                    isIconOnly
+                    aria-label="more than 99 notifications"
+                    variant="light"
+                    className="font-bold rounded-full dark:text-white text-slate-800 border-3 
+                    dark:bg-slate-900 bg-white  dark:border-slate-400"
+                >
+                    <SearchIcon
+                        size={18}
+                        className="text-slate-800 dark:text-slate-400"
+                    />
                 </Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-full">

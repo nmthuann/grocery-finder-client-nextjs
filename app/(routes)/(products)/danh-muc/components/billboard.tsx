@@ -68,7 +68,7 @@ const Billboard = () => {
                                         <div className="flex flex-grow gap-2 items-center">
                                             <Image
                                                 alt="Breathing app icon"
-                                                className=" w-11 h-11 rounded-full"
+                                                className=" w-11 h-11 rounded-3xl"
                                                 src="https://nextui.org/images/breathing-app-icon.jpeg"
                                             />
                                             <div className="flex flex-col">
@@ -76,8 +76,8 @@ const Billboard = () => {
                                                     Nhanh tay truy cập
                                                 </p>
                                                 <p className="text-tiny text-white/80">
-                                                    Chào đoán ngày mới với những
-                                                    ưu đãi cực sốc
+                                                    Chào đoán ngày mới với ưu
+                                                    đãi cực sốc
                                                 </p>
                                             </div>
                                         </div>

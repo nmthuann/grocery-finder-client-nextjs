@@ -16,7 +16,7 @@ import {
     X,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { JSX, useEffect, useState } from "react";
 
 const SearchInput = () => {
     const [showSuggestions, setShowSuggestions] = useState(false);

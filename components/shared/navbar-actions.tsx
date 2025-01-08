@@ -55,7 +55,7 @@ export const NavbarActions: React.FC<NavbarActionsProps> = ({ location }) => {
                     onPress={() => router.push("/cart")}
                 >
                     <ShoppingCart
-                        size={24}
+                        size={18}
                         className="text-slate-800 dark:text-slate-400"
                     />
                 </Button>
@@ -74,7 +74,10 @@ export const NavbarActions: React.FC<NavbarActionsProps> = ({ location }) => {
                             isIconOnly
                             aria-label="Login"
                         >
-                            <User2Icon className="text-slate-800 dark:text-slate-400" />
+                            <User2Icon
+                                size={18}
+                                className="text-slate-800 dark:text-slate-400"
+                            />
                         </Button>
                     </Tooltip>
 

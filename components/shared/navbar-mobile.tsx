@@ -65,16 +65,21 @@ export const NavbarMobileComponent: React.FC<NavbarMobileComponentProps> = ({
                     content={cart.items.length}
                     shape="circle"
                     color="danger"
+                    className="dark:border-white border-slate-900"
                 >
                     <Button
                         radius="full"
                         isIconOnly
                         aria-label="more than 99 notifications"
                         variant="light"
-                        size="sm"
+                        className="font-bold rounded-full dark:text-white text-slate-800 border-3 
+                    dark:bg-slate-900 bg-white  dark:border-slate-400"
                         onPress={() => router.push("/cart")}
                     >
-                        <ShoppingCart size={20} />
+                        <ShoppingCart
+                            size={18}
+                            className="text-slate-800 dark:text-slate-400"
+                        />
                     </Button>
                 </Badge>
                 <SearchDialog />
@@ -89,15 +94,19 @@ export const NavbarMobileComponent: React.FC<NavbarMobileComponentProps> = ({
                         >
                             <Button
                                 onPress={onOpen}
-                                color="secondary"
-                                className="font-bold rounded-full dark:text-white "
-                                variant="shadow"
+                                className="font-bold rounded-full dark:text-white text-slate-800 border-3 
+                    dark:bg-slate-900 bg-white  dark:border-slate-400"
+                                variant="light"
                                 isIconOnly
                                 aria-label="Login"
                             >
-                                <User2Icon size={20} />
+                                <User2Icon
+                                    className="text-slate-800 dark:text-slate-400"
+                                    size={18}
+                                />
                             </Button>
                         </Tooltip>
+
                         <AuthenticationModal
                             isOpen={isOpen}
                             onOpenChange={onOpenChange}

@@ -18,8 +18,12 @@ const CategoryList = () => {
                 <h2 className="text-[#64ff4b] font-bold text-2xl sm:text-3xl md:text-4xl">
                     Danh mục tại cửa hàng
                 </h2>
-                <Link href="/dau-an" underline="hover">
-                    Xem tất cả danh mục
+                <Link
+                    href="/dau-an"
+                    underline="hover"
+                    className="text-slate-500 dark:text-slate-200"
+                >
+                    Xem thêm
                 </Link>
             </div>
 
