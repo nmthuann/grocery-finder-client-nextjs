@@ -13,7 +13,7 @@ interface AuthenticationTabProps {
 export const AuthenticationTab: React.FC<AuthenticationTabProps> = ({
     onPress,
     isLoading,
-    location,
+    location
 }) => {
     const [selected, setSelected] = React.useState<string>("login");
 

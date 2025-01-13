@@ -1,7 +1,7 @@
 'use client'
 import { Badge, Button, Link, Navbar, NavbarBrand, NavbarContent, Tooltip, useDisclosure } from '@nextui-org/react'
 import { useEffect, useState } from 'react'
-import AuthenticationModal from '../auth/authentication-modal'
+import AuthenticationModal from '../modules/auth/auth-modal'
 import { useAuthContext } from '@/providers/auth-provider'
 import { ShoppingCart, User2Icon } from 'lucide-react'
 import { ThemeToggle } from './theme-toggle'

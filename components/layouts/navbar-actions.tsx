@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
 import { Badge, Button, Tooltip, useDisclosure } from '@nextui-org/react'
-import AuthenticationModal from '../auth/authentication-modal'
+import AuthenticationModal from '../modules/auth/auth-modal'
 import { useAuthContext } from '@/providers/auth-provider'
 import { ThemeToggle } from './theme-toggle'
 import useCart from '@/hooks/use-cart'
