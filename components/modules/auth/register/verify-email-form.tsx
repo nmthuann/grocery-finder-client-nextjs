@@ -15,33 +15,31 @@ const formSchema = z.object({
     email: z
         .string()
         .min(10, {
-            message: `${ErrorInput.MIN_ERROR} 10 kí tự.`,
+            message: `${ErrorInput.MIN_ERROR} 10 kí tự.`
         })
         .email({
-            message: ErrorInput.EMAIL_INVALID,
-        }),
+            message: ErrorInput.EMAIL_INVALID
+        })
 });
 
 interface VerifyEmailFormProps {
     setSelected: (option: string) => void;
-    isLoading: boolean;
     onEmailConfirmed: () => void;
     setEmailValid: (email: string) => void;
 }
 
 export const VerifyEmailForm: React.FC<VerifyEmailFormProps> = ({
     setSelected,
-    isLoading,
     onEmailConfirmed,
-    setEmailValid,
+    setEmailValid
 }) => {
-    const [onBtnLoad, setOnBtnLoad] = useState(isLoading);
+    const [onBtnLoad, setOnBtnLoad] = useState(false);
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            email: "",
-        },
+            email: ""
+        }
     });
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
@@ -59,6 +57,7 @@ export const VerifyEmailForm: React.FC<VerifyEmailFormProps> = ({
                 toast.error(AuthExceptionMessages.VERIFY_MAIL_FAILED);
             }
         } catch (error: unknown) {
+            console.log(error);
             setOnBtnLoad(false);
             toast.error(`${AuthExceptionMessages.VERIFY_MAIL_FAILED}`);
         } finally {
@@ -119,7 +118,7 @@ export const VerifyEmailForm: React.FC<VerifyEmailFormProps> = ({
                                 variant="shadow"
                                 radius="lg"
                             >
-                                Xác thực
+                                Xác thực tài khoản Email
                             </Button>
                         )}
                     </div>

@@ -3,43 +3,43 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import line from "@/public/assets/line.png";
 import MarQuee from "react-fast-marquee";
-import SearchInput from "@/app/components/search-input";
 import Typewriter from "typewriter-effect";
+import SearchBar from "@/components/modules/search/search-bar";
 
 const rowOneImages = [
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740023/wqw4xwp2g1stfrdbiygc.jpg",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740023/wqw4xwp2g1stfrdbiygc.jpg"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740141/ebruvdsfembdcg05mwrh.webp",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740141/ebruvdsfembdcg05mwrh.webp"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741484/aw8w9zn4iwqxg1vunjhi.jpg",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741484/aw8w9zn4iwqxg1vunjhi.jpg"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740416/gyqrwgshavw9h4meutjr.jpg",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740416/gyqrwgshavw9h4meutjr.jpg"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740839/uzcj7nsvnkuytzfxd4og.jpg",
-    },
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740839/uzcj7nsvnkuytzfxd4og.jpg"
+    }
 ];
 
 const rowTwoImages = [
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741011/dfvpnzbm2thwrybumoqj.jpg",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741011/dfvpnzbm2thwrybumoqj.jpg"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741288/damy2nytoivsppxkhgvt.jpg",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741288/damy2nytoivsppxkhgvt.jpg"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741286/wljo3duuuuiy0hqng5un.png",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741286/wljo3duuuuiy0hqng5un.png"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741038/qm6qnuochtthwterhykt.jpg",
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726741038/qm6qnuochtthwterhykt.jpg"
     },
     {
-        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740839/t3yqdbe3oxhxxowqw8fc.jpg",
-    },
+        url: "https://res.cloudinary.com/ddyreawwf/image/upload/v1726740839/t3yqdbe3oxhxxowqw8fc.jpg"
+    }
 ];
 
 const Introduce = () => {
@@ -64,7 +64,7 @@ const Introduce = () => {
                             options={{
                                 autoStart: true,
                                 loop: false,
-                                cursorClassName: "text-[#94a3b8]",
+                                cursorClassName: "text-[#94a3b8]"
                             }}
                             onInit={(typewriter) => {
                                 typewriter
@@ -79,7 +79,7 @@ const Introduce = () => {
                             }}
                         />
                     </h1>
-                    <SearchInput />
+                    <SearchBar />
                 </div>
                 <div className="md:mt-5">
                     <Image

@@ -4,7 +4,7 @@ import {
     SheetContent,
     SheetHeader,
     SheetTitle,
-    SheetTrigger,
+    SheetTrigger
 } from "@/components/ui/sheet";
 import { Button } from "@nextui-org/react";
 import { AlignJustify } from "lucide-react";

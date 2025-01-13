@@ -1,6 +1,6 @@
 "use client";
 import { searchSkusByName } from "@/actions/search-skus-by-name";
-import { ListboxWrapper } from "@/components/customs/search/listbox-wrapper";
+import { SearchListBoxWrapper } from "@/components/modules/search/search-listbox-wrapper";
 import { SearchProductResponse } from "@/types/products.type";
 import { Button, Input, Listbox, ListboxItem } from "@nextui-org/react";
 import {
@@ -13,12 +13,14 @@ import {
     Flower2,
     History,
     SearchIcon,
-    X,
+    X
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { JSX, useEffect, useState } from "react";
 
-const SearchInput = () => {
+const SearchBar = () => {
+    const router = useRouter();
+
     const [showSuggestions, setShowSuggestions] = useState(false);
     const [isArrowUp, setIsArrowUp] = useState(true);
     const [searchTerm, setSearchTerm] = useState("");
@@ -27,28 +29,23 @@ const SearchInput = () => {
         []
     );
 
-    const router = useRouter();
-
-    // Debounce logic: Đợi 300ms sau khi người dùng ngừng nhập trước khi cập nhật giá trị tìm kiếm
     useEffect(() => {
         const timeoutId = setTimeout(() => {
             setDebouncedTerm(searchTerm);
-        }, 300); // Thời gian chờ debounce (300ms)
+        }, 300);
 
-        // Dọn dẹp timeout khi searchTerm thay đổi trước khi hết 300ms
         return () => {
             clearTimeout(timeoutId);
         };
-    }, [searchTerm]); // Chỉ chạy lại hiệu ứng khi searchTerm thay đổi
+    }, [searchTerm]);
 
-    // Tạo giả lập tìm kiếm khi debouncedTerm thay đổi
     useEffect(() => {
         if (debouncedTerm) {
             console.log("Thực hiện tìm kiếm với từ khóa:", debouncedTerm);
             searchSkusByName(debouncedTerm)
                 .then((data) => {
                     console.log("Kết quả tìm kiếm:", data);
-                    setSearchResults(data); // Lưu kết quả vào state
+                    setSearchResults(data);
                 })
                 .catch((error) => {
                     console.error("Lỗi khi tìm kiếm:", error);
@@ -66,12 +63,12 @@ const SearchInput = () => {
     };
 
     const handleCloseSuggestions = () => {
-        setIsArrowUp(true); // Đặt mũi tên xuống khi đóng
-        setShowSuggestions(false); // Đóng vùng đề xuất
+        setIsArrowUp(true);
+        setShowSuggestions(false);
     };
 
     const highlightSearchTerm = (text: string): (string | JSX.Element)[] => {
-        if (!searchTerm) return [text]; // Return text as a single string element in an array
+        if (!searchTerm) return [text];
 
         const regex = new RegExp(`(${searchTerm})`, "gi");
         const parts = text.split(regex);
@@ -93,28 +90,28 @@ const SearchInput = () => {
         {
             key: "snack",
             label: "Snack",
-            href: "/snack",
+            href: "/snack"
         },
         {
             key: "icecream",
             label: "Kem",
-            href: "/kem",
+            href: "/kem"
         },
         {
             key: "banhpia",
             label: "Bánh pía 42g",
-            href: "/snack/banh-bia-42g",
+            href: "/snack/banh-bia-42g"
         },
         {
             key: "kemdanhrang",
             label: "Kem đánh răng",
-            href: "/kem-danh-rang",
+            href: "/kem-danh-rang"
         },
         {
             key: "dauancailan",
             label: "Chai Dầu Ăn Cái Lân 1L",
-            href: "/dau-an/chai-dau-an-cai-lan-1l",
-        },
+            href: "/dau-an/chai-dau-an-cai-lan-1l"
+        }
     ];
     return (
         <div className="w-3/4 sm:w-3/5 flex flex-col items-center">
@@ -171,7 +168,7 @@ const SearchInput = () => {
                     <ul className="list-none">
                         {searchResults.length > 0 ? (
                             <div>
-                                <ListboxWrapper>
+                                <SearchListBoxWrapper>
                                     <Listbox
                                         items={searchResults}
                                         aria-label="Search Results"
@@ -181,21 +178,20 @@ const SearchInput = () => {
                                                 key={item.id}
                                                 href={`${item.categoryUrl}/${item.slug}`}
                                             >
-                                                {/* {item.productName} */}
                                                 {highlightSearchTerm(
                                                     item.skuName
                                                 )}
                                             </ListboxItem>
                                         )}
                                     </Listbox>
-                                </ListboxWrapper>
+                                </SearchListBoxWrapper>
                             </div>
                         ) : (
                             <div>
                                 <li className="py-2 px-4">
                                     Mọi người cũng tìm kiếm:
                                 </li>
-                                <ListboxWrapper>
+                                <SearchListBoxWrapper>
                                     <Listbox
                                         items={defaultSuggestions}
                                         aria-label="Default suggestions"
@@ -212,7 +208,7 @@ const SearchInput = () => {
                                             </ListboxItem>
                                         )}
                                     </Listbox>
-                                </ListboxWrapper>
+                                </SearchListBoxWrapper>
                             </div>
                         )}
                     </ul>
@@ -226,7 +222,7 @@ const SearchInput = () => {
                     className="font-medium"
                     radius="full"
                     startContent={<CloudSunRain className="w-4 h4" />}
-                    onClick={() => router.push("/bia")}
+                    onPress={() => router.push("/bia")}
                 >
                     Thời tiết
                 </Button>
@@ -235,7 +231,7 @@ const SearchInput = () => {
                     variant="bordered"
                     radius="full"
                     startContent={<BicepsFlexed className="w-4 h4" />}
-                    onClick={() => router.push("/sua-chua")}
+                    onPress={() => router.push("/sua-chua")}
                 >
                     Sức khỏe
                 </Button>
@@ -245,7 +241,7 @@ const SearchInput = () => {
                     className="font-medium"
                     radius="full"
                     startContent={<Flower2 className="w-4 h4" />}
-                    onClick={() => router.push("/dau-goi")}
+                    onPress={() => router.push("/dau-goi")}
                 >
                     Làm Đẹp
                 </Button>
@@ -255,7 +251,7 @@ const SearchInput = () => {
                     className="font-medium"
                     radius="full"
                     startContent={<Beer className="w-4 h4" />}
-                    onClick={() => router.push("/nuoc-ngot")}
+                    onPress={() => router.push("/nuoc-ngot")}
                 >
                     Lành mạnh
                 </Button>
@@ -265,7 +261,7 @@ const SearchInput = () => {
                     className="font-medium"
                     radius="full"
                     startContent={<BatteryFull className="w-4 h4" />}
-                    onClick={() => router.push("/bia")}
+                    onPress={() => router.push("/bia")}
                 >
                     Nâng suất
                 </Button>
@@ -274,4 +270,4 @@ const SearchInput = () => {
     );
 };
 
-export default SearchInput;
+export default SearchBar;

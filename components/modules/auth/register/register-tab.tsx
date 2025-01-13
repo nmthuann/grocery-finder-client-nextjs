@@ -3,21 +3,19 @@ import { useState } from "react";
 import { InputOtpForm } from "./input-otp-form";
 import { VerifyEmailForm } from "./verify-email-form";
 import { Separator } from "@/components/ui/separator";
-import GoogleButton from "@/components/auth/google-button";
-import { CreateUserForm } from "./create-user-form";
+import { RegisterForm } from "./register-form";
+import { GoogleButton } from "@/components/modules/auth/btn-google";
 
-interface RegisterAccountProps {
+interface RegisterTabProps {
     onPress: () => void;
-    setSelected: (option: string) => void;
-    isLoading: boolean;
     location: Location[];
+    setSelected: (option: string) => void;
 }
 
-export const RegisterAccount: React.FC<RegisterAccountProps> = ({
+export const RegisterTab: React.FC<RegisterTabProps> = ({
     onPress,
-    setSelected,
-    isLoading,
     location,
+    setSelected
 }) => {
     const [emailConfirmed, setEmailConfirmed] = useState(false);
     const [otpSucceeded, setOtpSucceeded] = useState(false);
@@ -38,13 +36,11 @@ export const RegisterAccount: React.FC<RegisterAccountProps> = ({
                         <VerifyEmailForm
                             onEmailConfirmed={handleEmailConfirmation}
                             setSelected={setSelected}
-                            isLoading={isLoading}
                             setEmailValid={setEmailValid}
                         />
                     ) : (
                         <InputOtpForm
                             onSendOtpSucceed={handleSendOtpSucceeded}
-                            isLoading={false}
                             emailValid={emailValid}
                         />
                     )}
@@ -53,10 +49,9 @@ export const RegisterAccount: React.FC<RegisterAccountProps> = ({
                 </div>
             ) : (
                 <div>
-                    <CreateUserForm
+                    <RegisterForm
                         onPress={onPress}
                         setSelected={setSelected}
-                        isLoading={false}
                         location={location}
                         emailValid={emailValid}
                     />

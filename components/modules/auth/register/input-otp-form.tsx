@@ -1,12 +1,11 @@
 "use client";
+import { useState } from "react";
 import {
     InputOTP,
     InputOTPGroup,
     InputOTPSeparator,
-    InputOTPSlot,
+    InputOTPSlot
 } from "@/components/ui/input-otp";
-import { useState } from "react";
-
 import toast from "react-hot-toast";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -16,20 +15,16 @@ import { AuthExceptionMessages } from "@/constants/errors/errors";
 import { Button as BtnNextUI, Spinner } from "@nextui-org/react";
 import { Messages } from "@/constants/messages/message";
 interface InputOtpFormProps {
-    //onPress: () => void;
-    isLoading: boolean;
     onSendOtpSucceed: () => void;
     emailValid: string;
 }
 
 export const InputOtpForm: React.FC<InputOtpFormProps> = ({
-    //onPress,
-    isLoading,
     onSendOtpSucceed,
-    emailValid,
+    emailValid
 }) => {
     const [value, setValue] = useState("");
-    const [onBtnLoad, setOnBtnLoad] = useState(isLoading);
+    const [onBtnLoad, setOnBtnLoad] = useState(false);
     const isValueComplete = value.length === 6;
     const handleSendOTP = async () => {
         if (onBtnLoad) return;
@@ -38,7 +33,7 @@ export const InputOtpForm: React.FC<InputOtpFormProps> = ({
                 setOnBtnLoad(true);
                 const res = await axios.post(`/api/auth/send-otp`, {
                     email: emailValid,
-                    otp: value,
+                    otp: value
                 });
                 if (res.data.message === Messages.OTP_VALID) {
                     toast.success(Messages.OTP_VALID);
@@ -48,7 +43,8 @@ export const InputOtpForm: React.FC<InputOtpFormProps> = ({
                     setOnBtnLoad(false);
                     toast.error(AuthExceptionMessages.OTP_INVALID);
                 }
-            } catch (error) {
+            } catch (error: unknown) {
+                console.log(error);
                 setOnBtnLoad(false);
                 toast.error(AuthExceptionMessages.OTP_FAILED);
             } finally {
