@@ -1,5 +1,5 @@
 'use server'
-import { SystemError } from "@/constants/errors/errors";
+import { SystemError } from "@/constants/errors.enum";
 import { SearchProductResponse } from "@/types/products.type";
 
 

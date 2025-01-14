@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ThemeProvider } from "@/providers/theme-provider";
 import { getLocation } from "@/actions/get-location";
 import { getCategories } from "@/actions/get-categories";
 import Header from "@/components/layouts/header";
+import { SupportButton } from "../components/modules/support/support-btn";
 
 const openSans = Open_Sans({
     variable: "--font-open-sans",
@@ -33,6 +34,7 @@ export default async function RootLayout({
                 >
                     <Header location={location} categories={categories} />
                     {children}
+                    <SupportButton />
                 </ThemeProvider>
             </body>
         </html>

@@ -1,13 +1,6 @@
 import { Category } from "@/types/products.type";
+import { SideNavItem } from "@/types/ui.type";
 
-export type SideNavItem = {
-    id: number;
-    categoryName: string;
-    path: string;
-    leftValue: number;
-    rightValue: number;
-    subMenuItems?: SideNavItem[];
-};
 
 export function createMenuFromLeftRight(categories: Category[]): SideNavItem[] {
     const stack: SideNavItem[] = [];

@@ -5,11 +5,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { SideNavItem } from "@/constants/constants";
 import { Icon } from "@iconify/react";
 
 import { Button, Link as LinkNextUI } from "@nextui-org/react";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { SideNavItem } from "@/types/ui.type";
 
 interface SidebarProps {
     items: SideNavItem[];

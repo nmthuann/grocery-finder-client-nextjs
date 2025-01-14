@@ -11,9 +11,9 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import ResendOTPCountdown from "./resend-otp-countdown";
 import axios from "axios";
-import { AuthExceptionMessages } from "@/constants/errors/errors";
+import { AuthExceptionMessages } from "@/constants/errors.enum";
 import { Button as BtnNextUI, Spinner } from "@nextui-org/react";
-import { Messages } from "@/constants/messages/message";
+import { Messages } from "@/constants/messages.enum";
 interface InputOtpFormProps {
     onSendOtpSucceed: () => void;
     emailValid: string;

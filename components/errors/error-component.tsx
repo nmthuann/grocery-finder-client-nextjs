@@ -6,15 +6,18 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 interface ErrorComponentProps {
-    page: string;
+    title: string;
     message: string;
 }
 
-const ErrorComponent: React.FC<ErrorComponentProps> = ({ page, message }) => {
+export const ErrorComponent: React.FC<ErrorComponentProps> = ({
+    title,
+    message
+}) => {
     const router = useRouter();
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-5 ">
-            <h1 className="text-4xl font-bold mb-6 ">{page}</h1>
+            <h1 className="text-4xl font-bold mb-6 ">{title}</h1>
             <p className="text-lg text-red-600 mb-8">{message}</p>
             <div className="flex space-x-4">
                 <Button
@@ -42,5 +45,3 @@ const ErrorComponent: React.FC<ErrorComponentProps> = ({ page, message }) => {
         </div>
     );
 };
-
-export default ErrorComponent;

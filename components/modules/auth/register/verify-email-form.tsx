@@ -4,12 +4,12 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import toast from "react-hot-toast";
-import { AuthExceptionMessages, ErrorInput } from "@/constants/errors/errors";
+import { AuthExceptionMessages, ErrorInput } from "@/constants/errors.enum";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 import { Input, Link, Button, Spinner } from "@nextui-org/react";
 
 import axios from "axios";
-import { Messages } from "@/constants/messages/message";
+import { Messages } from "@/constants/messages.enum";
 
 const formSchema = z.object({
     email: z

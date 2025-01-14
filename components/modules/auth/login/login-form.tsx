@@ -1,8 +1,8 @@
 "use client";
 
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { AuthExceptionMessages, ErrorInput } from "@/constants/errors/errors";
-import { Messages } from "@/constants/messages/message";
+import { AuthExceptionMessages, ErrorInput } from "@/constants/errors.enum";
+import { Messages } from "@/constants/messages.enum";
 import { useAuthContext } from "@/providers/auth-provider";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button, Input, Link, Spinner } from "@nextui-org/react";

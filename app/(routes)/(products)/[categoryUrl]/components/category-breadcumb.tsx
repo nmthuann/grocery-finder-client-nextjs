@@ -1,20 +1,30 @@
-'use client'
-import { BreadcrumbItem, Breadcrumbs } from '@nextui-org/react'
+"use client";
+import { BreadcrumbItem, Breadcrumbs } from "@nextui-org/react";
 
 interface CategoryBreadcumbProps {
-  items: { title: string; path: string }[]
+    items: { title: string; path: string }[];
+    currentPath: string;
 }
 
-const CategoryBreadcumb: React.FC<CategoryBreadcumbProps> = ({ items }) => {
-  return (
-    <Breadcrumbs>
-      {items.map(item => (
-        <BreadcrumbItem key={item.path} href={item.path}>
-          {item.title}
-        </BreadcrumbItem>
-      ))}
-    </Breadcrumbs>
-  )
-}
+const CategoryBreadcumb: React.FC<CategoryBreadcumbProps> = ({
+    items,
+    currentPath
+}) => {
+    const home = { title: "Trang chủ", path: "/" };
+    const breadcrumbItems = [home, ...items];
+    return (
+        <Breadcrumbs>
+            {breadcrumbItems.map((breadcrumb) => (
+                <BreadcrumbItem
+                    key={breadcrumb.path}
+                    href={breadcrumb.path}
+                    isCurrent={currentPath === breadcrumb.path}
+                >
+                    {breadcrumb.title}
+                </BreadcrumbItem>
+            ))}
+        </Breadcrumbs>
+    );
+};
 
-export default CategoryBreadcumb
+export default CategoryBreadcumb;

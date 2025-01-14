@@ -13,7 +13,7 @@ const insights: string[] = [
     "Giao hàng nhanh chóng 🚚",
     "Ưu đãi đặc biệt hàng tháng 🎁",
     "Hỗ trợ tận tâm 24/7 📞",
-    "Nơi mua sắm tin cậy cho mọi gia đình 🏡",
+    "Nơi mua sắm tin cậy cho mọi gia đình 🏡"
 ];
 
 interface HeaderProps {

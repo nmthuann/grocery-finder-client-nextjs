@@ -10,8 +10,9 @@ import { Button } from "@nextui-org/react";
 import { AlignJustify } from "lucide-react";
 import { Sidebar } from "./sidebar";
 import { useEffect, useState } from "react";
-import { createMenuFromLeftRight, SideNavItem } from "@/constants/constants";
 import { Category } from "@/types/products.type";
+import { SideNavItem } from "@/types/ui.type";
+import { createMenuFromLeftRight } from "@/lib/generate-side-navbar";
 
 interface SidebarSheetProps {
     categories: Category[];

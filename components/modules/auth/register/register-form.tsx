@@ -12,8 +12,8 @@ import {
     AuthExceptionMessages,
     ErrorInput,
     SystemError
-} from "@/constants/errors/errors";
-import { Messages } from "@/constants/messages/message";
+} from "@/constants/errors.enum";
+import { Messages } from "@/constants/messages.enum";
 import { useAuthContext } from "@/providers/auth-provider";
 import { UserRegister } from "@/types/users.type";
 import { zodResolver } from "@hookform/resolvers/zod";
