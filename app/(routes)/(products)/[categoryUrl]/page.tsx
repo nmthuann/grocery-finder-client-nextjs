@@ -10,17 +10,17 @@ import { ErrorComponent } from "@/components/errors/error-component";
 const CategoryPage = async ({
     params
 }: {
-    params: { categoryUrl: string };
+    params: Promise<{ categoryUrl: string }>;
 }) => {
-    const paramUrl = params.categoryUrl;
-    console.log("paramUrl", paramUrl);
-    if (paramUrl === undefined) {
+    const { categoryUrl } = await params;
+
+    if (!categoryUrl) {
         return <NotFoundComponent />;
     }
     try {
         const categories = await getCategories();
         const findCategory = categories.find(
-            (cat) => cat.categoryUrl === `/${paramUrl}`
+            (cat) => cat.categoryUrl === `/${categoryUrl}`
         );
 
         let productCards: ProductResponse[] = [];
@@ -29,20 +29,18 @@ const CategoryPage = async ({
                 findCategory.categoryName
             );
             return (
-                <div>
-                    <Suspense fallback={<Loading />}>
-                        <CategoryExplorer
-                            categories={categories}
-                            productCards={productCards}
-                        />
-                    </Suspense>
-                </div>
+                <Suspense fallback={<Loading />}>
+                    <CategoryExplorer
+                        categories={categories}
+                        productCards={productCards}
+                    />
+                </Suspense>
             );
         } else {
             return (
                 <ErrorComponent
                     title="Category Page"
-                    message={`Failed to load Categories or Products. Not Found /${params.categoryUrl} . Please try again later.`}
+                    message={`Failed to load Categories or Products. Not Found /${categoryUrl} . Please try again later.`}
                 />
             );
         }

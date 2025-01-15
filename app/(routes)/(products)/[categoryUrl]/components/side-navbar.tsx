@@ -9,13 +9,9 @@ import { SideNavBarMenu } from "./side-navbar-menu";
 
 interface SideNavBarProps {
     items: SideNavItem[];
-    // onCategorySelect: (category: SideNavItem) => void;
 }
 
-export const SideNavBar: React.FC<SideNavBarProps> = ({
-    items
-    // onCategorySelect
-}) => {
+export const SideNavBar: React.FC<SideNavBarProps> = ({ items }) => {
     return (
         <div className="w-80 h-[calc(100vh-10rem)] border rounded-xl p-2 m-2">
             <div className="flex flex-col h-full">
@@ -40,7 +36,6 @@ export const SideNavBar: React.FC<SideNavBarProps> = ({
                             <SideNavBarMenu
                                 key={item.categoryName}
                                 item={item}
-                                // onCategorySelect={onCategorySelect}
                             />
                         ))}
                     </div>

@@ -10,7 +10,7 @@ import {
 import { ChevronDownIcon } from "lucide-react";
 import { useMemo, useState } from "react";
 
-const CategoryFilter = () => {
+export const CategoryFilter = () => {
     const [selectedKeys, setSelectedKeys] = useState(
         new Set(["Sản phẩm bán chạy"])
     );
@@ -56,5 +56,3 @@ const CategoryFilter = () => {
         </div>
     );
 };
-
-export default CategoryFilter;

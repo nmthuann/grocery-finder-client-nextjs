@@ -27,7 +27,6 @@ export const SideNavBarMenu: FC<SideNavBarMenuProps> = ({
                 variant="light"
                 onPress={() => {
                     toggleSubMenu();
-                    // onCategorySelect(item);
                 }}
                 className={`
                     flex items-center 
@@ -51,7 +50,9 @@ export const SideNavBarMenu: FC<SideNavBarMenuProps> = ({
                             key={subItem.categoryName}
                             href={subItem.path}
                             className={`${
-                                subItem.path === pathname ? "font-bold" : ""
+                                subItem.path === pathname
+                                    ? "font-bold dark:text-[#64FF4B] text-green-700"
+                                    : ""
                             }`}
                         >
                             <span>{subItem.categoryName}</span>

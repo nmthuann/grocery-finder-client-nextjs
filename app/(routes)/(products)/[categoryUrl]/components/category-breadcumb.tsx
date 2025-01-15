@@ -6,7 +6,7 @@ interface CategoryBreadcumbProps {
     currentPath: string;
 }
 
-const CategoryBreadcumb: React.FC<CategoryBreadcumbProps> = ({
+export const CategoryBreadcumb: React.FC<CategoryBreadcumbProps> = ({
     items,
     currentPath
 }) => {
@@ -26,5 +26,3 @@ const CategoryBreadcumb: React.FC<CategoryBreadcumbProps> = ({
         </Breadcrumbs>
     );
 };
-
-export default CategoryBreadcumb;

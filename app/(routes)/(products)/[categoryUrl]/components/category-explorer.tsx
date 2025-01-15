@@ -1,17 +1,15 @@
 "use client";
 
-// import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@nextui-org/react";
 import { KanbanSquareDashed, Undo } from "lucide-react";
 import { Category } from "@/types/products.type";
 import { ProductResponse } from "@/types/responses/product-card.response.type";
 import { SideNavBar } from "./side-navbar";
-import CategoryBreadcumb from "./category-breadcumb";
-import CategoryFilter from "./category-filter";
-import ProductCard from "../[slug]/components/product-card";
-// import { SideNavItem } from "@/types/ui.type";
 import { createMenuFromLeftRight } from "@/lib/generate-side-navbar";
+import { CategoryBreadcumb } from "./category-breadcumb";
+import { CategoryFilter } from "./category-filter";
+import ProductCard from "../[slug]/components/product-card";
 
 interface CategoryComponentProps {
     categories: Category[];
@@ -24,38 +22,17 @@ const CategoryExplorer: React.FC<CategoryComponentProps> = ({
 }) => {
     const router = useRouter();
     const pathname = usePathname();
-    // const [items, setItems] = useState<SideNavItem[]>([]);
-    // const [breadcrumbItems, setBreadcrumbItems] = useState([
-    //     { title: "Trang chủ", path: "/" },
-    //     { title: "Danh mục sản phẩm", path: "/danh-muc-san-pham" }
-    // ]);
 
-    // const handleCategorySelect = (category: SideNavItem) => {
-    //     const newBreadcrumbs = [
-    //         { title: "Trang chủ", path: "/" },
-    //         { title: category.categoryName, path: category.path }
-    //     ];
-    //     setBreadcrumbItems(newBreadcrumbs);
-    // };
-
-    console.log("pathname", pathname);
-
-    // useEffect(() => {
-    //     const convertedItems = createMenuFromLeftRight(categories);
-    //     setItems(convertedItems);
-    // }, [categories]);
+    console.log("pathname:::", pathname);
 
     const category = categories.find((cat) => cat.categoryUrl === pathname);
     const convertedItems = createMenuFromLeftRight(categories);
 
     return (
-        <div className="flex flex-col md:flex-row h-auto rounded-3xl">
+        <div className="flex flex-col md:flex-row h-auto rounded-3xl mb-4">
             {/* Phần tử 1: Chiếm 1/4 */}
             <div className="hidden md:flex-[1] mt-4 rounded-3xl md:block">
-                <SideNavBar
-                    items={convertedItems}
-                    // onCategorySelect={handleCategorySelect}
-                />
+                <SideNavBar items={convertedItems} />
             </div>
 
             {/* Phần tử 2: Chiếm 3/4 */}
@@ -80,6 +57,7 @@ const CategoryExplorer: React.FC<CategoryComponentProps> = ({
                 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 
                 gap-2 
                 ml-10 sm:ml-8 md:ml-8 lg:ml-5
+               
                 "
                 >
                     {productCards.length > 0 ? (
